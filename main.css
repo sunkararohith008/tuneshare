@@ -48,7 +48,7 @@ footer {
 }
 
 .container {
-    width:50%; 
+    /*width:50%;*/
     border: 1px solid #fff;
     border-radius: 2rem;  
     align-self:center;
@@ -77,4 +77,7 @@ h2 {
 
 .error {
     color: #FFC107;
+}
+.table tbody {
+    background-color: rgba(251, 251, 255, 0.6); 
 }
