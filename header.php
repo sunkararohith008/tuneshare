@@ -20,6 +20,7 @@
             </li>
             <li>
                 <a href="view.php"> View Those Sweet Tunes </a>
+          </li>
         </ul>
     </nav>
   </header>
