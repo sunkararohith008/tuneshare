@@ -13,10 +13,10 @@
   <body>
   <div class="container">
   <header>
-    <nav class=".navbar-nav navbar-light bg-light"> 
+    <nav class="navbar-nav navbar-light bg-light"> 
         <ul>
             <li> 
-                <a href="index.php"> Share Your Music </p> 
+                <a href="index.php"> Share Your Music </a> 
             </li>
             <li>
                 <a href="view.php"> View Those Sweet Tunes </a>
