@@ -18,7 +18,7 @@
     <!-- I had to Google what bop meant. I am very uncool -->
     <p class="lead">
       <a href="add.php" class="btn btn-lg btn-secondary">Share Your Top Tune</a>
-      <a href="#" class="btn btn-lg btn-secondary orange">Browse Playlists </a>
+      <a href="#" class="btn btn-lg btn-secondary orange">Browse Tunes </a>
     </p>
   </main>
   <footer class="mastfoot mt-auto">
