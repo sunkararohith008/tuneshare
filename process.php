@@ -137,6 +137,6 @@
         }
     }
     ?>
-    <a href="index.php" class="error-btn"> Back to Form </a>
+    <a href="index.php" class="btn btn-lg btn-secondary orange"> Back to Form </a>
 </main>
 <?php require_once('footer.php'); ?>
