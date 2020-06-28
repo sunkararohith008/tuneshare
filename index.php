@@ -1,66 +1,32 @@
 <?php require_once('header.php'); ?>
-      <h1> TuneShare</h1>
-      <h2>Share Your Fave Tunes & Join The Community </h2>
-    <?php
-    //initialize variables 
-    $id = null; 
-    $firstname = null;
-    $lastname = null; 
-    $location = null; 
-    $genre = null; 
-    $age = null; 
-    $email = null; 
-    $favsong = null; 
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">TuneShare</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="index.php">Home</a>
+        <a class="nav-link" href="add.php">Share Your Tune</a>
+        <a class="nav-link" href="view.php">View Playlists</a>
+      </nav>
+    </div>
+  </header>
 
-    if(!empty($_GET['id']) && (is_numeric($_GET['id']))) {
-      //grab the id from url
-      $id = filter_input(INPUT_GET, 'id');
-      //connect to the database 
-      require_once('connect.php'); 
-      //set up our query 
-      $sql = "SELECT * FROM songs WHERE user_id = :user_id;"; 
-      //prepare our statement
-      $statement = $db->prepare($sql); 
-      //bind 
-      $statement->bindParam(':user_id', $id); 
-      //execute 
-      $statement->execute(); 
-      //use fetchAll to store 
-      $records = $statement->fetchAll(); 
-      //to loop through, use a foreach loop 
-      foreach($records as $record) : 
-      $firstname = $record['first_name']; 
-      $lastname = $record['last_name']; 
-      $genre = $record['genre'];
-      $age = $record['age'];  
-      $location = $record['location']; 
-      $email = $record['email']; 
-      $favsong = $record['favsong']; 
-      endforeach; 
-      //close the db connection 
-      $statement->closeCursor(); 
-    }
-    ?>
-    <main>
-      <p> Looking for new songs to add to your work at home playlist? Join our community and share with other music lovers! </p>
-      <form action="process.php" method="post">
-        <!-- add hidden input with user id if editing -->
-        <input type="hidden" name="user_id" value="<?php echo $id;?>">
-        <label for="fname"> Your First Name  </label>
-        <input type="text" name="fname" class="form-control" id="fname" value="<?php echo $firstname; ?>">
-        <label for="lname"> Your Last Name  </label>
-        <input type="text" name="lname" class="form-control" id="lname" value="<?php echo $lastname; ?>">
-        <label for="genre"> Your Favourite Genre  </label>
-        <input type="text" name="genre" class="form-control" id="genre" value="<?php echo $genre; ?>">
-        <label for="location"> Your Location </label>
-        <input type="text" name="location" class="form-control" id="location" value="<?php echo $location; ?>">
-        <label for="location"> Your Age </label>
-        <input type="number" name="age" class="form-control" id="age" value="<?php echo $age; ?>">
-        <label for="email"> Your Email </label>
-        <input type="text" name="email" class="form-control" id="email" value="<?php echo $email; ?>">
-        <label for="favsong"> What are you listening to on repeat?  </label>
-        <input type="text" name="favsong" class="form-control" id="favsong" value="<?php echo $favsong;?>">
-        <input type="submit" name="submit" value="Send & Share" class="btn">
-      </form>
-    </main>
-<?php require_once('footer.php'); ?>
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Join The TuneShare Community.</h1>
+    <p class="lead">Need a new WFH playlist? We've got you covered. Join our community and connect with fellow music-lovers. Share your top bops and browse what others are listening too. </p>
+    <!-- I had to Google what bop meant. I am very uncool -->
+    <p class="lead">
+      <a href="add.php" class="btn btn-lg btn-secondary">Share Your Playlist</a>
+      <a href="#" class="btn btn-lg btn-secondary orange">Browse Playlists </a>
+    </p>
+  </main>
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p> &copy; Copyright <?php echo date('yy'); ?></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
+<!-- Design and layout relies on help from Bootstrap cover example - https://getbootstrap.com/docs/4.5/examples/cover/ -->
