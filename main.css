@@ -1,16 +1,20 @@
 html {  
     box-sizing: border-box;
-    font-size: 10px; 
+}
+
+html, body {
+  overflow: auto;
 }
 
 body {
     color: #fff;
     background-color: #303F9F;
     display:flex;
-    font-size: 2rem;
     font-family: 'Quicksand', sans-serif; 
-    text-align:center; 
+    text-align:center;
+    height: 100%; 
 }
+
 
 form input, 
 form label  {
@@ -18,13 +22,7 @@ form label  {
     text-align:left; 
 }
 
-.form-control {
-    height: 5rem;
-    font-size: 2rem;
-}
-
 form label {
-    font-size: 1.8rem;
     margin: 1em 0;
     display:block; 
     text-align: left; 
@@ -33,9 +31,8 @@ form label {
 form input[type="submit"],
 .error-btn {
     background-color: #FFC107;
-    display:block; 
-    margin: 4rem 0;
-    font-size: 2rem; 
+    display:block;
+    width:100%; 
 }
 
 form input[type="submit"]:hover,
@@ -49,9 +46,9 @@ footer {
 
 .container {
     /*width:50%;*/
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
     border-radius: 2rem;  
-    align-self:center;
+    /*align-self:center;*/
     padding:3rem; 
     margin-top: 3rem;   
 }
@@ -64,20 +61,252 @@ footer {
   text-align:center; 
 }
 
-h1 {
-    font-family: 'Piedra', cursive;
-    font-size: 6rem;
-    text-align:center; 
-}
-
-h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem; 
-}
-
 .error {
-    color: #FFC107;
+    color: #fff;
+    font-size: 1.1em;
 }
-.table tbody {
+/*.table tbody {
     background-color: rgba(251, 251, 255, 0.6); 
+}*/
+
+/* Page Specific Styles */ 
+/*cover.css -> 
+
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
 }
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #444;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color:#fff;
+  border: transparent;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+  background-image: url('../assets/bg2.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .9);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .9);
+}
+
+.cover-container {
+  max-width: 65em;
+}
+/*
+ * Header
+ */
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  font-size: 1.2rem; 
+  color: #fff; 
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover {
+  color: 	#ff1744;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.masthead-brand {
+  font-size: 3rem;
+}
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+.cover .btn-lg:nth-of-type(2) {
+  background-color: #ff1744;
+  color: #fff; 
+}
+
+.cover .btn-lg:nth-of-type(2):hover {
+  background-color: #ff616f;
+}
+
+.cover .btn-lg:hover {
+  background-color: #c4001d;
+  color: #fff; 
+}
+
+
+/*
+ * Footer
+ */
+.mastfoot {
+  color: rgba(255, 255, 255, .5);
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  /* inner page */
+
+  h1 {
+    margin-top: 7rem;
+    margin-bottom: 2.5rem;
+  }
+
+.add {
+  height: 100%;
+  background-color: #333;
+  background-image: url('../assets/bg1.jpg');
+  background-size: cover; 
+  background-position:center; 
+  background-repeat: no-repeat; 
+}
+
+.add form {
+  width: 60%;
+  margin-left:auto; 
+  margin-right:auto; 
+}
+
+.add label {
+  font-size: 1.2rem;
+}
+.add input[type="file"] {
+  float: left; 
+  margin-bottom: 2rem; 
+}
+
+.add input[type="submit"] {
+  float: none; 
+  clear:both; 
+}
+.add .form-control {
+  background-color: rgba(255, 255, 255, 0.5); 
+  border:transparent;
+}
+
+.view {
+  height: 100%;
+  background-color: #333;
+  background-image: url('../assets/bg3.jpg');
+  background-size: cover; 
+  background-position:bottom; 
+  background-repeat: no-repeat; 
+}
+
+.view img {
+  height: auto; 
+  width: 160px;
+  border-radius: 50%;
+}
+
+.view table {
+  background-color:rgba(0,0,0, 0.6); 
+  color: #eaeaea; 
+}
+
+.view table {
+  margin-top: 10rem;
+  font-size: 1.1em;
+}
+
+.view .table td {
+  border-collapse:collapse;
+  border-top: transparent; 
+}
+
+.view .table tr {
+  display:flex; 
+  align-items: center;
+}
+
+.view tr:hover {
+  background-color: #ff1744;
+}
+
+.saved main {
+  background-color: rgba(0,0,0, 0.6); 
+  padding: 2em; 
+  border-radius: 5%; 
+  color: #fff; 
+}
+
+.saved main a {
+  max-width: 300px;
+  height: 2em; 
+  color: #fff; 
+  background-color: #ff1744;
+  display:block; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+  /*responsive */ 
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  @media (min-width: 48em) {
+    .masthead-brand {
+      float: left;
+    }
+    .nav-masthead {
+      float: right;
+    }
+  }
