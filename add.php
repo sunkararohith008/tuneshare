@@ -1,4 +1,5 @@
 <?php require_once('header.php'); ?>
+<?php session_start(); ?>
 <body class="add">
 <div class="container inner">
 <header class="masthead mb-auto">
@@ -25,6 +26,12 @@
     //added profile & linkk 
     $profile = null; 
     $link = null;
+    
+    if (isset($_SESSION['fname']) && isset($_SESSION['lname']) ) {
+        echo "<p> Hey There " . $_SESSION['fname'] ." ".$_SESSION['lname']. "!";
+    } else {
+        echo "<p> Hey There! ";
+    }
 
     if(!empty($_GET['id']) && (is_numeric($_GET['id']))) {
       //grab the id from url
@@ -100,5 +107,6 @@
         </div>
         <input type="submit" name="submit" value="Submit" class="btn">
       </form>
+        <a href="destroy.php"> Forget Me ! </a>
     </main>
 <?php require_once('footer.php'); ?>
