@@ -1,4 +1,5 @@
 <?php require_once('header.php'); ?>
+<?php session_start(); ?>
 <body class="view">
 <div class="container inner">
 <header class="masthead mb-auto">
@@ -12,6 +13,12 @@
     </div>
   </header>
     <?php
+    
+    if (isset($_SESSION['fname']) && isset($_SESSION['lname']) ) {
+        echo "<p> Hey There " . $_SESSION['fname'] ." ".$_SESSION['lname']. "!";
+    } else {
+        echo "<p> Hey There! ";
+    }
     try {
     //connect to our db 
     require_once('connect.php'); 
@@ -45,5 +52,6 @@
         echo "<p> $error message </p>"; 
     }
     ?>
+    <a href="destroy.php"> Forget Me ! </a>
     </main>
     <?php require_once('footer.php'); ?>
