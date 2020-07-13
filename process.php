@@ -13,7 +13,7 @@
   </header>
 <h1> TuneShare - Share Your Fave Tunes & Join The Community </h1>
 <main>
-    <?php
+    <?php session_start();
 
     $first_name = filter_input(INPUT_POST, 'fname');
     $last_name = filter_input(INPUT_POST, 'lname');
@@ -23,6 +23,18 @@
     $fav_song = filter_input(INPUT_POST, 'favsong');
     $link = filter_input(INPUT_POST, 'link');
     $age = filter_input(INPUT_POST, 'age');
+    
+    // Session for first name and last name
+    $_SESSION['fname'] = $first_name;
+    $_SESSION['lname'] = $last_name;
+
+    if(isset($_SESSION['fname']) && isset($_SESSION['lname']) ) {
+      echo "<p> Thanks " . $_SESSION['fname']." ". $_SESSION['lname']. "!";
+    }
+    else {
+      echo "<p> Thanks ";
+    }
+    
     /* image */
     $photo = $_FILES['photo']['name'];
     $photo_type = $_FILES['photo']['type'];
@@ -133,7 +145,7 @@
             echo $error_message;
             echo " $id $first_name $last_name $genre $location $email $age $fav_song $photo";
             //email app admin with error
-            mail('jessicagilfillan@gmail.com', 'TuneShare Error', 'Error :' . $error_message);
+            mail('sunkararohith008@gmail.com', 'TuneShare Error', 'Error :' . $error_message);
         }
     }
     ?>
