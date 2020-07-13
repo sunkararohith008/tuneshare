@@ -34,7 +34,9 @@ CREATE TABLE `songs` (
   `location` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `age` int(10) NOT NULL,
-  `favsong` varchar(100) NOT NULL
+  `favsong` varchar(100) NOT NULL,
+  `link` varchar(100),
+  `photo` varchar(100)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
